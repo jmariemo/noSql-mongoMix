@@ -1,0 +1,19 @@
+{
+  "name": "nosql-mongomix",
+  "version": "1.0.0",
+  "description": "UCB Bootcamp Module 18 Homework Challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node utils/seed",
+    "heroku-postbuild": "node utils/seed.js"
+},
+"dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+},
+"devDependencies": {
+    "nodemon": "^2.0.22"
+}
+}
