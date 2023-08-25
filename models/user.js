@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-// Schema to create User model
+// user schema
 const userSchema = new Schema(
   {
     username: { type: String, unique: true, required: true, trimmed: true },
@@ -18,11 +18,10 @@ const userSchema = new Schema(
   },
   {
     toJSON: { virtuals: true },
-    id: false,
   }
 );
 
-// "friendCount" virtual property
+// virtual friendCount that retrieves the length of the user's friends array field on query
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });

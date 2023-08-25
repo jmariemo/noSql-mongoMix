@@ -1,7 +1,7 @@
 const { Thought, User } = require("../models");
 
 // get all thoughts
-async function thoughtsGet(req, res) {
+async function thoughtsGetAll(req, res) {
   Thought.find()
     .then(async (thoughts) => {
       const thoughtObj = {
@@ -16,7 +16,7 @@ async function thoughtsGet(req, res) {
 }
 
 // get single thought
-function thoughtSingle(req, res) {
+function thoughtGetSingle(req, res) {
   Thought.findOne({ _id: req.params.thoughtId })
     .select("-__v")
     .then(async (thought) =>
@@ -86,8 +86,8 @@ function thoughtUpdate(req, res) {
     .catch((err) => res.status(500).json(err));
 }
 
-// add reaction
-function reactionAdd(req, res) {
+// create reaction
+function reactionCreate(req, res) {
   console.log("Add your reaction!");
   console.log(req.body);
   Thought.findOneAndUpdate(
@@ -119,11 +119,11 @@ function reactionRemove(req, res) {
 }
 
 module.exports = {
-  thoughtSingle,
-  thoughtsGet,
+  thoughtsGetAll,
+  thoughtGetSingle,
   thoughtCreate,
   thoughtDelete,
   thoughtUpdate,
-  reactionAdd,
+  reactionCreate,
   reactionRemove,
 };
