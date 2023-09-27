@@ -1,4 +1,3 @@
-# react-Portfolio
 ## UCB Bootcamp Module 18 Homework Challenge
 ### Description
 This is my submission for the UCB Bootcamp Module 18 Homework Challenge. </br>
